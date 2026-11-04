@@ -1,0 +1,13 @@
+.venv/
+.venv-kcoreml/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+outputs/
+coremlc/
+kokoro-coreml/
+data/benchmarks/tmp_wavs/
+.DS_Store

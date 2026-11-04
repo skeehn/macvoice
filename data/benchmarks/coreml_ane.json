@@ -1,0 +1,115 @@
+{
+  "created": "2026-11-02T21:02:28Z",
+  "machine": {
+    "cpu": "Apple M3",
+    "memory_gb": 16.0,
+    "python": "3.12.15",
+    "packages": {
+      "torch": "2.5.0",
+      "coremltools": "8.3.0",
+      "numpy": "1.26.4",
+      "transformers": "4.44.2",
+      "misaki": "0.9.4"
+    }
+  },
+  "engine": "kokoro-coreml HybridTTSPipeline(force_engine='coreml', compute_units=ALL) - Python Config-A: CoreML decoder-har-post buckets + PyTorch prefix",
+  "compute_units": "ALL",
+  "voice": "af_heart",
+  "speed": 1.0,
+  "protocol": "pipeline init + 1 warm synthesize() untimed, then 5 timed runs (median wall), fresh subprocess per bucket; MLModel.predict time wrapped separately",
+  "texts_source": "bench.py TEXTS (verbatim from kokoro-coreml bakeoff_harness.py)",
+  "buckets": {
+    "3s": {
+      "init_and_warmup_s": 0.329,
+      "runs_s": [
+        0.2201,
+        0.2163,
+        0.2197,
+        0.2198,
+        0.2219
+      ],
+      "median_ms": 219.8,
+      "min_ms": 216.3,
+      "max_ms": 221.9,
+      "predict_warm_s": [
+        0.1491,
+        0.1498,
+        0.1498,
+        0.1502,
+        0.1509
+      ],
+      "audio_duration_s": 2.8,
+      "rtf_x_realtime": 12.74,
+      "peak_rss_mb": 1163.8
+    },
+    "7s": {
+      "init_and_warmup_s": 0.4707,
+      "runs_s": [
+        0.3284,
+        0.326,
+        0.3285,
+        0.3266,
+        0.3279
+      ],
+      "median_ms": 327.9,
+      "min_ms": 326.0,
+      "max_ms": 328.5,
+      "predict_warm_s": [
+        0.1995,
+        0.199,
+        0.2005,
+        0.198,
+        0.1996
+      ],
+      "audio_duration_s": 6.75,
+      "rtf_x_realtime": 20.59,
+      "peak_rss_mb": 1199.5
+    },
+    "15s": {
+      "init_and_warmup_s": 0.8944,
+      "runs_s": [
+        0.6998,
+        0.7294,
+        0.7241,
+        0.7075,
+        0.7738
+      ],
+      "median_ms": 724.1,
+      "min_ms": 699.8,
+      "max_ms": 773.8,
+      "predict_warm_s": [
+        0.4631,
+        0.4615,
+        0.4573,
+        0.445,
+        0.504
+      ],
+      "audio_duration_s": 13.9,
+      "rtf_x_realtime": 19.2,
+      "peak_rss_mb": 1272.3
+    },
+    "30s": {
+      "init_and_warmup_s": 4.0433,
+      "runs_s": [
+        3.8995,
+        3.4439,
+        2.7334,
+        2.5817,
+        2.7845
+      ],
+      "median_ms": 2784.5,
+      "min_ms": 2581.7,
+      "max_ms": 3899.5,
+      "predict_warm_s": [
+        2.404,
+        2.2129,
+        1.99,
+        1.8862,
+        1.9928
+      ],
+      "audio_duration_s": 27.375,
+      "rtf_x_realtime": 9.83,
+      "peak_rss_mb": 1421.5
+    }
+  }
+}

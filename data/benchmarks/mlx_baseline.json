@@ -1,0 +1,81 @@
+{
+  "created": "2026-10-31T01:21:18Z",
+  "machine": {
+    "platform": "macOS-26.7.1-arm64-arm-64bit",
+    "cpu": "Apple M3",
+    "memory_gb": 16.0,
+    "python": "3.12.15"
+  },
+  "packages": {
+    "mlx": "0.32.4",
+    "mlx-audio": "0.6.3",
+    "misaki": "0.9.4"
+  },
+  "model": "mlx-community/Kokoro-82M-bf16",
+  "voice": "af_heart",
+  "speed": 1.0,
+  "protocol": "1 warmup + 5 timed runs per bucket, fresh subprocess per bucket, median of end-to-end text->wav wall time",
+  "texts_source": "kokoro-coreml bakeoff_harness.py (frozen constants)",
+  "buckets": {
+    "3s": {
+      "runs_s": [
+        1.1103,
+        1.1303,
+        1.1145,
+        1.264,
+        1.3489
+      ],
+      "median_ms": 1130.3,
+      "min_ms": 1110.3,
+      "max_ms": 1348.9,
+      "audio_duration_s": 2.8,
+      "rtf_x_realtime": 2.48,
+      "peak_rss_mb": 2351.7
+    },
+    "7s": {
+      "runs_s": [
+        1.445,
+        1.5011,
+        1.4493,
+        1.6533,
+        1.67
+      ],
+      "median_ms": 1501.1,
+      "min_ms": 1445.0,
+      "max_ms": 1670.0,
+      "audio_duration_s": 6.75,
+      "rtf_x_realtime": 4.5,
+      "peak_rss_mb": 1527.1
+    },
+    "15s": {
+      "runs_s": [
+        1.9926,
+        1.9893,
+        2.0125,
+        2.1726,
+        1.9977
+      ],
+      "median_ms": 1997.7,
+      "min_ms": 1989.3,
+      "max_ms": 2172.6,
+      "audio_duration_s": 13.9,
+      "rtf_x_realtime": 6.96,
+      "peak_rss_mb": 1482.1
+    },
+    "30s": {
+      "runs_s": [
+        3.2373,
+        3.19,
+        3.3407,
+        3.5784,
+        3.4347
+      ],
+      "median_ms": 3340.7,
+      "min_ms": 3190.0,
+      "max_ms": 3578.4,
+      "audio_duration_s": 27.375,
+      "rtf_x_realtime": 8.19,
+      "peak_rss_mb": 880.0
+    }
+  }
+}
