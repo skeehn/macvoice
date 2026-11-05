@@ -43,6 +43,51 @@ baseline. Their 3s clip regression on Ultra-class ANE routing recurs here too
 (ANE is *slower* than GPU on 3s clips; faster on 7–15s). Numbers were not
 recorded on a quiet host.
 
+## Why ANE wins at 7–15s and loses at 3s/30s (v0.1.1 placement study)
+
+`scripts/compute_plan.py` loads coremltools 8.3 `MLComputePlan` on our
+precompiled buckets in both compute-unit modes and records, per operator, the
+runtime's preferred compute device (ANE/GPU/CPU) plus its **estimated**
+workload share (`MLComputePlanCost.weight`, 0–1). Raw records:
+`data/benchmarks/compute_plan.json`.
+
+| bucket | `ALL`-mode placement (est. workload) | `ALL` med | `CPU_AND_GPU` med | winner | why |
+|---|---|---|---|---|---|
+| 3s | **81% ANE** / 19% GPU | 220 ms | 169 ms | GPU | ANE grabs nearly everything (327/328 muls, 218/218 adds, 45/51 convs); tensors are tiny, so ANE's fixed per-op dispatch overhead never amortizes — one device running 100% of the graph wins |
+| 7s | 14% ANE / **86% GPU** | 328 ms | 350 ms | ANE (hybrid) | the plan itself pushes the heavy conv stack back to GPU and keeps a thin ANE slice; the hybrid edges out GPU-only by ~7% |
+| 15s | 15% ANE / **85% GPU** | 724 ms | 751 ms | ANE (hybrid) | same rebalanced hybrid; and per op-kind it splits *within* a kind (mul: 163 ANE + 165 GPU) instead of taking whole kinds like at 3s |
+| 30s | n/a — see below | 2,784 ms | 2,026 ms | GPU | the `ALL` plan for the 30s package never loads: plan generation wedges root's `ANECompilerService` at 100% CPU (macOS 26 bug; `sudo pkill -9 ANECompilerService` clears it). Medians-only reading is consistent: past ~15s the ANE slice stops paying for itself |
+
+Findings:
+
+- `CPU_AND_GPU` is a clean single-device baseline in every bucket: all 1,174
+  non-constant ops prefer GPU, est. workload 100% GPU, placement identical
+  across buckets and deterministic.
+- `ALL`'s placement is **bucket-size dependent**: it overcommits to ANE on the
+  smallest graph and rebalances to a GPU-heavy hybrid from 7s up. That hybrid
+  margin is exactly our `coreml` (ANE) column vs `coreml` (GPU) column.
+- The iSTFT tail never leaves the GPU: `conv_transpose` is GPU-preferred under
+  `ALL` in all buckets (~10–15% of est. workload), and at 3s an additional 6
+  convs stay GPU — few ops, but they carry the vocoder tail.
+- Bookkeeping ops (`slice_by_index`, 6–12 stragglers) prefer CPU; the 1,079
+  constants in each graph are unbound and weightless.
+- Caveat: `MLComputePlanCost.weight` is the runtime's *own* cost model — it
+  clearly undersells ANE's fixed dispatch/compile overhead at small sizes
+  (the 3s row). Placement is exact; the weights are an estimate.
+
+## v0.1.1
+
+Placement study release; no engine code changed.
+
+- `scripts/compute_plan.py` — per-op compute-unit placement via coremltools
+  8.3 `MLComputePlan` (ALL vs CPU_AND_GPU) on the precompiled buckets, with
+  per-op estimated workload shares; data in
+  `data/benchmarks/compute_plan.json`.
+- README section (above) explaining the ANE-vs-GPU medians per bucket from
+  that placement data.
+- Documented the 30s `ALL`-mode plan-generation wedge (`ANECompilerService`,
+  macOS 26) and the `--no-costs` escape hatch in the study script.
+
 ## v0.1.0
 
 First release of the tool.

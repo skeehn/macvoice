@@ -1,0 +1,1989 @@
+{
+ "created": "2026-11-04T23:41:33Z",
+ "machine": {
+  "cpu": "Apple M3",
+  "memory_gb": 16.0,
+  "os": "26.7.1",
+  "python": "3.12.15",
+  "coremltools": "8.3.0"
+ },
+ "source": "MLComputePlan on precompiled coremlc/kokoro_decoder_har_post_*s.mlmodelc",
+ "protocol": "deterministic placement enumeration (not a timing bench); preferred_compute_device per op + optional MLComputePlanCost.weight sums",
+ "bench_median_ms": {
+  "3s": {
+   "ALL": 219.8,
+   "CPU_AND_GPU": 169.0
+  },
+  "7s": {
+   "ALL": 327.9,
+   "CPU_AND_GPU": 349.6
+  },
+  "15s": {
+   "ALL": 724.1,
+   "CPU_AND_GPU": 750.8
+  },
+  "30s": {
+   "ALL": 2784.5,
+   "CPU_AND_GPU": 2026.3
+  }
+ },
+ "modes": {
+  "ALL": {
+   "7s": {
+    "ops_total": 2253,
+    "cost_estimation": true,
+    "op_counts": {
+     "const": 1079,
+     "ios16.mul": 328,
+     "ios16.add": 218,
+     "ios16.real_div": 132,
+     "ios16.reduce_mean": 90,
+     "ios16.conv": 51,
+     "ios16.sin": 50,
+     "ios16.linear": 48,
+     "ios16.reshape": 48,
+     "split": 48,
+     "ios16.pow": 48,
+     "ios16.sub": 45,
+     "ios16.sqrt": 44,
+     "ios16.cast": 6,
+     "slice_by_index": 4,
+     "ios16.conv_transpose": 4,
+     "ios16.leaky_relu": 3,
+     "ios16.gather": 2,
+     "ios16.clip": 2,
+     "pad": 1,
+     "ios16.exp": 1,
+     "ios16.cos": 1
+    },
+    "device_ops": {
+     "ANE": 568,
+     "GPU": 606,
+     "unbound": 1079
+    },
+    "by_op": {
+     "const": {
+      "unbound": 1079
+     },
+     "ios16.add": {
+      "ANE": 109,
+      "GPU": 109
+     },
+     "ios16.cast": {
+      "GPU": 6
+     },
+     "ios16.clip": {
+      "GPU": 2
+     },
+     "ios16.conv": {
+      "GPU": 30,
+      "ANE": 21
+     },
+     "ios16.conv_transpose": {
+      "GPU": 4
+     },
+     "ios16.cos": {
+      "GPU": 1
+     },
+     "ios16.exp": {
+      "GPU": 1
+     },
+     "ios16.gather": {
+      "GPU": 2
+     },
+     "ios16.leaky_relu": {
+      "GPU": 2,
+      "ANE": 1
+     },
+     "ios16.linear": {
+      "ANE": 24,
+      "GPU": 24
+     },
+     "ios16.mul": {
+      "ANE": 163,
+      "GPU": 165
+     },
+     "ios16.pow": {
+      "ANE": 24,
+      "GPU": 24
+     },
+     "ios16.real_div": {
+      "ANE": 66,
+      "GPU": 66
+     },
+     "ios16.reduce_mean": {
+      "GPU": 46,
+      "ANE": 44
+     },
+     "ios16.reshape": {
+      "ANE": 24,
+      "GPU": 24
+     },
+     "ios16.sin": {
+      "ANE": 24,
+      "GPU": 26
+     },
+     "ios16.sqrt": {
+      "ANE": 22,
+      "GPU": 22
+     },
+     "ios16.sub": {
+      "ANE": 22,
+      "GPU": 23
+     },
+     "pad": {
+      "GPU": 1
+     },
+     "slice_by_index": {
+      "GPU": 4
+     },
+     "split": {
+      "ANE": 24,
+      "GPU": 24
+     }
+    },
+    "est_weight_total": 1.0,
+    "est_weight_by_device": {
+     "ANE": 0.1418,
+     "GPU": 0.8582
+    },
+    "est_weight_by_op": {
+     "ios16.conv@GPU": 0.29551,
+     "ios16.mul@GPU": 0.2152,
+     "ios16.add@GPU": 0.12922,
+     "ios16.conv_transpose@GPU": 0.09693,
+     "ios16.mul@ANE": 0.04988,
+     "ios16.add@ANE": 0.03282,
+     "ios16.sub@GPU": 0.02797,
+     "ios16.sin@GPU": 0.023,
+     "ios16.pow@GPU": 0.02283,
+     "ios16.conv@ANE": 0.02252,
+     "ios16.reduce_mean@GPU": 0.02094,
+     "ios16.real_div@GPU": 0.02093,
+     "ios16.pow@ANE": 0.00761,
+     "ios16.sin@ANE": 0.00761,
+     "ios16.sub@ANE": 0.00708,
+     "ios16.real_div@ANE": 0.00698,
+     "ios16.reduce_mean@ANE": 0.00698,
+     "ios16.cast@GPU": 0.00319,
+     "ios16.leaky_relu@GPU": 0.00101
+    },
+    "supported_union_by_op": {
+     "ios16.add": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.cast": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.clip": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.conv": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.conv_transpose": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.cos": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.exp": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.gather": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.leaky_relu": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.linear": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.mul": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.pow": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.real_div": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.reduce_mean": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.reshape": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sin": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sqrt": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sub": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "pad": [
+      "CPU",
+      "GPU"
+     ],
+     "slice_by_index": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "split": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ]
+    },
+    "ops_supported_by_multiple_devices": 1174
+   },
+   "15s": {
+    "ops_total": 2253,
+    "cost_estimation": true,
+    "op_counts": {
+     "const": 1079,
+     "ios16.mul": 328,
+     "ios16.add": 218,
+     "ios16.real_div": 132,
+     "ios16.reduce_mean": 90,
+     "ios16.conv": 51,
+     "ios16.sin": 50,
+     "ios16.linear": 48,
+     "ios16.reshape": 48,
+     "split": 48,
+     "ios16.pow": 48,
+     "ios16.sub": 45,
+     "ios16.sqrt": 44,
+     "ios16.cast": 6,
+     "slice_by_index": 4,
+     "ios16.conv_transpose": 4,
+     "ios16.leaky_relu": 3,
+     "ios16.gather": 2,
+     "ios16.clip": 2,
+     "pad": 1,
+     "ios16.exp": 1,
+     "ios16.cos": 1
+    },
+    "device_ops": {
+     "ANE": 572,
+     "GPU": 602,
+     "unbound": 1079
+    },
+    "by_op": {
+     "const": {
+      "unbound": 1079
+     },
+     "ios16.add": {
+      "ANE": 113,
+      "GPU": 105
+     },
+     "ios16.cast": {
+      "GPU": 6
+     },
+     "ios16.clip": {
+      "GPU": 2
+     },
+     "ios16.conv": {
+      "GPU": 30,
+      "ANE": 21
+     },
+     "ios16.conv_transpose": {
+      "GPU": 4
+     },
+     "ios16.cos": {
+      "GPU": 1
+     },
+     "ios16.exp": {
+      "GPU": 1
+     },
+     "ios16.gather": {
+      "GPU": 2
+     },
+     "ios16.leaky_relu": {
+      "GPU": 2,
+      "ANE": 1
+     },
+     "ios16.linear": {
+      "ANE": 24,
+      "GPU": 24
+     },
+     "ios16.mul": {
+      "ANE": 163,
+      "GPU": 165
+     },
+     "ios16.pow": {
+      "ANE": 24,
+      "GPU": 24
+     },
+     "ios16.real_div": {
+      "ANE": 66,
+      "GPU": 66
+     },
+     "ios16.reduce_mean": {
+      "GPU": 46,
+      "ANE": 44
+     },
+     "ios16.reshape": {
+      "ANE": 24,
+      "GPU": 24
+     },
+     "ios16.sin": {
+      "ANE": 24,
+      "GPU": 26
+     },
+     "ios16.sqrt": {
+      "ANE": 22,
+      "GPU": 22
+     },
+     "ios16.sub": {
+      "ANE": 22,
+      "GPU": 23
+     },
+     "pad": {
+      "GPU": 1
+     },
+     "slice_by_index": {
+      "GPU": 4
+     },
+     "split": {
+      "ANE": 24,
+      "GPU": 24
+     }
+    },
+    "est_weight_total": 1.0,
+    "est_weight_by_device": {
+     "ANE": 0.1499,
+     "GPU": 0.8501
+    },
+    "est_weight_by_op": {
+     "ios16.conv@GPU": 0.29624,
+     "ios16.mul@GPU": 0.21572,
+     "ios16.add@GPU": 0.11938,
+     "ios16.conv_transpose@GPU": 0.09717,
+     "ios16.mul@ANE": 0.05,
+     "ios16.add@ANE": 0.04064,
+     "ios16.sub@GPU": 0.02804,
+     "ios16.sin@GPU": 0.02305,
+     "ios16.pow@GPU": 0.02289,
+     "ios16.conv@ANE": 0.02257,
+     "ios16.reduce_mean@GPU": 0.02099,
+     "ios16.real_div@GPU": 0.02098,
+     "ios16.pow@ANE": 0.00763,
+     "ios16.sin@ANE": 0.00763,
+     "ios16.sub@ANE": 0.0071,
+     "ios16.real_div@ANE": 0.007,
+     "ios16.reduce_mean@ANE": 0.00699,
+     "ios16.cast@GPU": 0.0032,
+     "ios16.leaky_relu@GPU": 0.00102
+    },
+    "supported_union_by_op": {
+     "ios16.add": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.cast": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.clip": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.conv": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.conv_transpose": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.cos": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.exp": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.gather": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.leaky_relu": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.linear": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.mul": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.pow": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.real_div": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.reduce_mean": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.reshape": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sin": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sqrt": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sub": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "pad": [
+      "CPU",
+      "GPU"
+     ],
+     "slice_by_index": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "split": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ]
+    },
+    "ops_supported_by_multiple_devices": 1174
+   },
+   "3s": {
+    "ops_total": 2253,
+    "cost_estimation": true,
+    "op_counts": {
+     "const": 1079,
+     "ios16.mul": 328,
+     "ios16.add": 218,
+     "ios16.real_div": 132,
+     "ios16.reduce_mean": 90,
+     "ios16.conv": 51,
+     "ios16.sin": 50,
+     "ios16.linear": 48,
+     "ios16.reshape": 48,
+     "split": 48,
+     "ios16.pow": 48,
+     "ios16.sub": 45,
+     "ios16.sqrt": 44,
+     "ios16.cast": 6,
+     "slice_by_index": 4,
+     "ios16.conv_transpose": 4,
+     "ios16.leaky_relu": 3,
+     "ios16.gather": 2,
+     "ios16.clip": 2,
+     "pad": 1,
+     "ios16.exp": 1,
+     "ios16.cos": 1
+    },
+    "device_ops": {
+     "ANE": 1156,
+     "CPU": 6,
+     "GPU": 12,
+     "unbound": 1079
+    },
+    "by_op": {
+     "const": {
+      "unbound": 1079
+     },
+     "ios16.add": {
+      "ANE": 218
+     },
+     "ios16.cast": {
+      "ANE": 4,
+      "GPU": 2
+     },
+     "ios16.clip": {
+      "ANE": 2
+     },
+     "ios16.conv": {
+      "ANE": 45,
+      "GPU": 6
+     },
+     "ios16.conv_transpose": {
+      "GPU": 2,
+      "CPU": 2
+     },
+     "ios16.cos": {
+      "ANE": 1
+     },
+     "ios16.exp": {
+      "ANE": 1
+     },
+     "ios16.gather": {
+      "CPU": 2
+     },
+     "ios16.leaky_relu": {
+      "ANE": 3
+     },
+     "ios16.linear": {
+      "ANE": 48
+     },
+     "ios16.mul": {
+      "ANE": 327,
+      "GPU": 1
+     },
+     "ios16.pow": {
+      "ANE": 48
+     },
+     "ios16.real_div": {
+      "ANE": 132
+     },
+     "ios16.reduce_mean": {
+      "ANE": 90
+     },
+     "ios16.reshape": {
+      "ANE": 48
+     },
+     "ios16.sin": {
+      "ANE": 50
+     },
+     "ios16.sqrt": {
+      "ANE": 44
+     },
+     "ios16.sub": {
+      "ANE": 44,
+      "CPU": 1
+     },
+     "pad": {
+      "GPU": 1
+     },
+     "slice_by_index": {
+      "ANE": 3,
+      "CPU": 1
+     },
+     "split": {
+      "ANE": 48
+     }
+    },
+    "est_weight_total": 1.0,
+    "est_weight_by_device": {
+     "ANE": 0.8122,
+     "CPU": 0.0016,
+     "GPU": 0.1862
+    },
+    "est_weight_by_op": {
+     "ios16.mul@ANE": 0.29878,
+     "ios16.add@ANE": 0.19691,
+     "ios16.conv_transpose@GPU": 0.14533,
+     "ios16.conv@ANE": 0.09539,
+     "ios16.sin@ANE": 0.0459,
+     "ios16.pow@ANE": 0.04566,
+     "ios16.sub@ANE": 0.04247,
+     "ios16.real_div@ANE": 0.04187,
+     "ios16.reduce_mean@ANE": 0.04187,
+     "ios16.conv@GPU": 0.03343,
+     "ios16.cast@GPU": 0.00428,
+     "ios16.leaky_relu@ANE": 0.002,
+     "ios16.mul@GPU": 0.00174,
+     "pad@GPU": 0.00143,
+     "ios16.conv_transpose@CPU": 0.00129
+    },
+    "supported_union_by_op": {
+     "ios16.add": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.cast": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.clip": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.conv": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.conv_transpose": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.cos": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.exp": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.gather": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.leaky_relu": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.linear": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.mul": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.pow": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.real_div": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.reduce_mean": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.reshape": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sin": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sqrt": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sub": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "pad": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "slice_by_index": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "split": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ]
+    },
+    "ops_supported_by_multiple_devices": 1174
+   }
+  },
+  "CPU_AND_GPU": {
+   "3s": {
+    "ops_total": 2253,
+    "cost_estimation": true,
+    "op_counts": {
+     "const": 1079,
+     "ios16.mul": 328,
+     "ios16.add": 218,
+     "ios16.real_div": 132,
+     "ios16.reduce_mean": 90,
+     "ios16.conv": 51,
+     "ios16.sin": 50,
+     "ios16.linear": 48,
+     "ios16.reshape": 48,
+     "split": 48,
+     "ios16.pow": 48,
+     "ios16.sub": 45,
+     "ios16.sqrt": 44,
+     "ios16.cast": 6,
+     "slice_by_index": 4,
+     "ios16.conv_transpose": 4,
+     "ios16.leaky_relu": 3,
+     "ios16.gather": 2,
+     "ios16.clip": 2,
+     "pad": 1,
+     "ios16.exp": 1,
+     "ios16.cos": 1
+    },
+    "device_ops": {
+     "GPU": 1174,
+     "unbound": 1079
+    },
+    "by_op": {
+     "const": {
+      "unbound": 1079
+     },
+     "ios16.add": {
+      "GPU": 218
+     },
+     "ios16.cast": {
+      "GPU": 6
+     },
+     "ios16.clip": {
+      "GPU": 2
+     },
+     "ios16.conv": {
+      "GPU": 51
+     },
+     "ios16.conv_transpose": {
+      "GPU": 4
+     },
+     "ios16.cos": {
+      "GPU": 1
+     },
+     "ios16.exp": {
+      "GPU": 1
+     },
+     "ios16.gather": {
+      "GPU": 2
+     },
+     "ios16.leaky_relu": {
+      "GPU": 3
+     },
+     "ios16.linear": {
+      "GPU": 48
+     },
+     "ios16.mul": {
+      "GPU": 328
+     },
+     "ios16.pow": {
+      "GPU": 48
+     },
+     "ios16.real_div": {
+      "GPU": 132
+     },
+     "ios16.reduce_mean": {
+      "GPU": 90
+     },
+     "ios16.reshape": {
+      "GPU": 48
+     },
+     "ios16.sin": {
+      "GPU": 50
+     },
+     "ios16.sqrt": {
+      "GPU": 44
+     },
+     "ios16.sub": {
+      "GPU": 45
+     },
+     "pad": {
+      "GPU": 1
+     },
+     "slice_by_index": {
+      "GPU": 4
+     },
+     "split": {
+      "GPU": 48
+     }
+    },
+    "est_weight_total": 1.0,
+    "est_weight_by_device": {
+     "GPU": 1.0
+    },
+    "est_weight_by_op": {
+     "ios16.conv@GPU": 0.38458,
+     "ios16.mul@GPU": 0.24638,
+     "ios16.add@GPU": 0.14807,
+     "ios16.conv_transpose@GPU": 0.08333,
+     "ios16.sub@GPU": 0.03202,
+     "ios16.sin@GPU": 0.0263,
+     "ios16.pow@GPU": 0.02616,
+     "ios16.real_div@GPU": 0.02399,
+     "ios16.reduce_mean@GPU": 0.02399,
+     "ios16.cast@GPU": 0.00275,
+     "ios16.leaky_relu@GPU": 0.00114
+    },
+    "supported_union_by_op": {
+     "ios16.add": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.cast": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.clip": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.conv": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.conv_transpose": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.cos": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.exp": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.gather": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.leaky_relu": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.linear": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.mul": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.pow": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.real_div": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.reduce_mean": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.reshape": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sin": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sqrt": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sub": [
+      "CPU",
+      "GPU"
+     ],
+     "pad": [
+      "CPU",
+      "GPU"
+     ],
+     "slice_by_index": [
+      "CPU",
+      "GPU"
+     ],
+     "split": [
+      "CPU",
+      "GPU"
+     ]
+    },
+    "ops_supported_by_multiple_devices": 1174
+   },
+   "7s": {
+    "ops_total": 2253,
+    "cost_estimation": true,
+    "op_counts": {
+     "const": 1079,
+     "ios16.mul": 328,
+     "ios16.add": 218,
+     "ios16.real_div": 132,
+     "ios16.reduce_mean": 90,
+     "ios16.conv": 51,
+     "ios16.sin": 50,
+     "ios16.linear": 48,
+     "ios16.reshape": 48,
+     "split": 48,
+     "ios16.pow": 48,
+     "ios16.sub": 45,
+     "ios16.sqrt": 44,
+     "ios16.cast": 6,
+     "slice_by_index": 4,
+     "ios16.conv_transpose": 4,
+     "ios16.leaky_relu": 3,
+     "ios16.gather": 2,
+     "ios16.clip": 2,
+     "pad": 1,
+     "ios16.exp": 1,
+     "ios16.cos": 1
+    },
+    "device_ops": {
+     "GPU": 1174,
+     "unbound": 1079
+    },
+    "by_op": {
+     "const": {
+      "unbound": 1079
+     },
+     "ios16.add": {
+      "GPU": 218
+     },
+     "ios16.cast": {
+      "GPU": 6
+     },
+     "ios16.clip": {
+      "GPU": 2
+     },
+     "ios16.conv": {
+      "GPU": 51
+     },
+     "ios16.conv_transpose": {
+      "GPU": 4
+     },
+     "ios16.cos": {
+      "GPU": 1
+     },
+     "ios16.exp": {
+      "GPU": 1
+     },
+     "ios16.gather": {
+      "GPU": 2
+     },
+     "ios16.leaky_relu": {
+      "GPU": 3
+     },
+     "ios16.linear": {
+      "GPU": 48
+     },
+     "ios16.mul": {
+      "GPU": 328
+     },
+     "ios16.pow": {
+      "GPU": 48
+     },
+     "ios16.real_div": {
+      "GPU": 132
+     },
+     "ios16.reduce_mean": {
+      "GPU": 90
+     },
+     "ios16.reshape": {
+      "GPU": 48
+     },
+     "ios16.sin": {
+      "GPU": 50
+     },
+     "ios16.sqrt": {
+      "GPU": 44
+     },
+     "ios16.sub": {
+      "GPU": 45
+     },
+     "pad": {
+      "GPU": 1
+     },
+     "slice_by_index": {
+      "GPU": 4
+     },
+     "split": {
+      "GPU": 48
+     }
+    },
+    "est_weight_total": 1.0,
+    "est_weight_by_device": {
+     "GPU": 1.0
+    },
+    "est_weight_by_op": {
+     "ios16.conv@GPU": 0.38462,
+     "ios16.mul@GPU": 0.2464,
+     "ios16.add@GPU": 0.14808,
+     "ios16.conv_transpose@GPU": 0.0833,
+     "ios16.sub@GPU": 0.03202,
+     "ios16.sin@GPU": 0.0263,
+     "ios16.pow@GPU": 0.02616,
+     "ios16.reduce_mean@GPU": 0.02399,
+     "ios16.real_div@GPU": 0.02399,
+     "ios16.cast@GPU": 0.00275,
+     "ios16.leaky_relu@GPU": 0.00114
+    },
+    "supported_union_by_op": {
+     "ios16.add": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.cast": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.clip": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.conv": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.conv_transpose": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.cos": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.exp": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.gather": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.leaky_relu": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.linear": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.mul": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.pow": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.real_div": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.reduce_mean": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.reshape": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sin": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sqrt": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sub": [
+      "CPU",
+      "GPU"
+     ],
+     "pad": [
+      "CPU",
+      "GPU"
+     ],
+     "slice_by_index": [
+      "CPU",
+      "GPU"
+     ],
+     "split": [
+      "CPU",
+      "GPU"
+     ]
+    },
+    "ops_supported_by_multiple_devices": 1174
+   },
+   "15s": {
+    "ops_total": 2253,
+    "cost_estimation": true,
+    "op_counts": {
+     "const": 1079,
+     "ios16.mul": 328,
+     "ios16.add": 218,
+     "ios16.real_div": 132,
+     "ios16.reduce_mean": 90,
+     "ios16.conv": 51,
+     "ios16.sin": 50,
+     "ios16.linear": 48,
+     "ios16.reshape": 48,
+     "split": 48,
+     "ios16.pow": 48,
+     "ios16.sub": 45,
+     "ios16.sqrt": 44,
+     "ios16.cast": 6,
+     "slice_by_index": 4,
+     "ios16.conv_transpose": 4,
+     "ios16.leaky_relu": 3,
+     "ios16.gather": 2,
+     "ios16.clip": 2,
+     "pad": 1,
+     "ios16.exp": 1,
+     "ios16.cos": 1
+    },
+    "device_ops": {
+     "GPU": 1174,
+     "unbound": 1079
+    },
+    "by_op": {
+     "const": {
+      "unbound": 1079
+     },
+     "ios16.add": {
+      "GPU": 218
+     },
+     "ios16.cast": {
+      "GPU": 6
+     },
+     "ios16.clip": {
+      "GPU": 2
+     },
+     "ios16.conv": {
+      "GPU": 51
+     },
+     "ios16.conv_transpose": {
+      "GPU": 4
+     },
+     "ios16.cos": {
+      "GPU": 1
+     },
+     "ios16.exp": {
+      "GPU": 1
+     },
+     "ios16.gather": {
+      "GPU": 2
+     },
+     "ios16.leaky_relu": {
+      "GPU": 3
+     },
+     "ios16.linear": {
+      "GPU": 48
+     },
+     "ios16.mul": {
+      "GPU": 328
+     },
+     "ios16.pow": {
+      "GPU": 48
+     },
+     "ios16.real_div": {
+      "GPU": 132
+     },
+     "ios16.reduce_mean": {
+      "GPU": 90
+     },
+     "ios16.reshape": {
+      "GPU": 48
+     },
+     "ios16.sin": {
+      "GPU": 50
+     },
+     "ios16.sqrt": {
+      "GPU": 44
+     },
+     "ios16.sub": {
+      "GPU": 45
+     },
+     "pad": {
+      "GPU": 1
+     },
+     "slice_by_index": {
+      "GPU": 4
+     },
+     "split": {
+      "GPU": 48
+     }
+    },
+    "est_weight_total": 1.0,
+    "est_weight_by_device": {
+     "GPU": 1.0
+    },
+    "est_weight_by_op": {
+     "ios16.conv@GPU": 0.38463,
+     "ios16.mul@GPU": 0.2464,
+     "ios16.add@GPU": 0.14808,
+     "ios16.conv_transpose@GPU": 0.08331,
+     "ios16.sub@GPU": 0.03202,
+     "ios16.sin@GPU": 0.02631,
+     "ios16.pow@GPU": 0.02617,
+     "ios16.reduce_mean@GPU": 0.02399,
+     "ios16.real_div@GPU": 0.02399,
+     "ios16.cast@GPU": 0.00275,
+     "ios16.leaky_relu@GPU": 0.00114
+    },
+    "supported_union_by_op": {
+     "ios16.add": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.cast": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.clip": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.conv": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.conv_transpose": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.cos": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.exp": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.gather": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.leaky_relu": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.linear": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.mul": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.pow": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.real_div": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.reduce_mean": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.reshape": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sin": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sqrt": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sub": [
+      "CPU",
+      "GPU"
+     ],
+     "pad": [
+      "CPU",
+      "GPU"
+     ],
+     "slice_by_index": [
+      "CPU",
+      "GPU"
+     ],
+     "split": [
+      "CPU",
+      "GPU"
+     ]
+    },
+    "ops_supported_by_multiple_devices": 1174
+   },
+   "30s": {
+    "ops_total": 2253,
+    "cost_estimation": true,
+    "op_counts": {
+     "const": 1079,
+     "ios16.mul": 328,
+     "ios16.add": 218,
+     "ios16.real_div": 132,
+     "ios16.reduce_mean": 90,
+     "ios16.conv": 51,
+     "ios16.sin": 50,
+     "ios16.linear": 48,
+     "ios16.reshape": 48,
+     "split": 48,
+     "ios16.pow": 48,
+     "ios16.sub": 45,
+     "ios16.sqrt": 44,
+     "ios16.cast": 6,
+     "slice_by_index": 4,
+     "ios16.conv_transpose": 4,
+     "ios16.leaky_relu": 3,
+     "ios16.gather": 2,
+     "ios16.clip": 2,
+     "pad": 1,
+     "ios16.exp": 1,
+     "ios16.cos": 1
+    },
+    "device_ops": {
+     "GPU": 1174,
+     "unbound": 1079
+    },
+    "by_op": {
+     "const": {
+      "unbound": 1079
+     },
+     "ios16.add": {
+      "GPU": 218
+     },
+     "ios16.cast": {
+      "GPU": 6
+     },
+     "ios16.clip": {
+      "GPU": 2
+     },
+     "ios16.conv": {
+      "GPU": 51
+     },
+     "ios16.conv_transpose": {
+      "GPU": 4
+     },
+     "ios16.cos": {
+      "GPU": 1
+     },
+     "ios16.exp": {
+      "GPU": 1
+     },
+     "ios16.gather": {
+      "GPU": 2
+     },
+     "ios16.leaky_relu": {
+      "GPU": 3
+     },
+     "ios16.linear": {
+      "GPU": 48
+     },
+     "ios16.mul": {
+      "GPU": 328
+     },
+     "ios16.pow": {
+      "GPU": 48
+     },
+     "ios16.real_div": {
+      "GPU": 132
+     },
+     "ios16.reduce_mean": {
+      "GPU": 90
+     },
+     "ios16.reshape": {
+      "GPU": 48
+     },
+     "ios16.sin": {
+      "GPU": 50
+     },
+     "ios16.sqrt": {
+      "GPU": 44
+     },
+     "ios16.sub": {
+      "GPU": 45
+     },
+     "pad": {
+      "GPU": 1
+     },
+     "slice_by_index": {
+      "GPU": 4
+     },
+     "split": {
+      "GPU": 48
+     }
+    },
+    "est_weight_total": 1.0,
+    "est_weight_by_device": {
+     "GPU": 1.0
+    },
+    "est_weight_by_op": {
+     "ios16.conv@GPU": 0.38464,
+     "ios16.mul@GPU": 0.2464,
+     "ios16.add@GPU": 0.14808,
+     "ios16.conv_transpose@GPU": 0.08331,
+     "ios16.sub@GPU": 0.03202,
+     "ios16.sin@GPU": 0.02631,
+     "ios16.pow@GPU": 0.02617,
+     "ios16.reduce_mean@GPU": 0.02399,
+     "ios16.real_div@GPU": 0.02399,
+     "ios16.cast@GPU": 0.00275,
+     "ios16.leaky_relu@GPU": 0.00114
+    },
+    "supported_union_by_op": {
+     "ios16.add": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.cast": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.clip": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.conv": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.conv_transpose": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.cos": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.exp": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.gather": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.leaky_relu": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.linear": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.mul": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.pow": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.real_div": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.reduce_mean": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.reshape": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sin": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sqrt": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sub": [
+      "CPU",
+      "GPU"
+     ],
+     "pad": [
+      "CPU",
+      "GPU"
+     ],
+     "slice_by_index": [
+      "CPU",
+      "GPU"
+     ],
+     "split": [
+      "CPU",
+      "GPU"
+     ]
+    },
+    "ops_supported_by_multiple_devices": 1174
+   }
+  }
+ },
+ "diff": {
+  "3s": {
+   "ops_with_different_placement": {
+    "ios16.add": {
+     "ALL": {
+      "ANE": 218
+     },
+     "CPU_AND_GPU": {
+      "GPU": 218
+     }
+    },
+    "ios16.cast": {
+     "ALL": {
+      "ANE": 4,
+      "GPU": 2
+     },
+     "CPU_AND_GPU": {
+      "GPU": 6
+     }
+    },
+    "ios16.clip": {
+     "ALL": {
+      "ANE": 2
+     },
+     "CPU_AND_GPU": {
+      "GPU": 2
+     }
+    },
+    "ios16.conv": {
+     "ALL": {
+      "ANE": 45,
+      "GPU": 6
+     },
+     "CPU_AND_GPU": {
+      "GPU": 51
+     }
+    },
+    "ios16.conv_transpose": {
+     "ALL": {
+      "GPU": 2,
+      "CPU": 2
+     },
+     "CPU_AND_GPU": {
+      "GPU": 4
+     }
+    },
+    "ios16.cos": {
+     "ALL": {
+      "ANE": 1
+     },
+     "CPU_AND_GPU": {
+      "GPU": 1
+     }
+    },
+    "ios16.exp": {
+     "ALL": {
+      "ANE": 1
+     },
+     "CPU_AND_GPU": {
+      "GPU": 1
+     }
+    },
+    "ios16.gather": {
+     "ALL": {
+      "CPU": 2
+     },
+     "CPU_AND_GPU": {
+      "GPU": 2
+     }
+    },
+    "ios16.leaky_relu": {
+     "ALL": {
+      "ANE": 3
+     },
+     "CPU_AND_GPU": {
+      "GPU": 3
+     }
+    },
+    "ios16.linear": {
+     "ALL": {
+      "ANE": 48
+     },
+     "CPU_AND_GPU": {
+      "GPU": 48
+     }
+    },
+    "ios16.mul": {
+     "ALL": {
+      "ANE": 327,
+      "GPU": 1
+     },
+     "CPU_AND_GPU": {
+      "GPU": 328
+     }
+    },
+    "ios16.pow": {
+     "ALL": {
+      "ANE": 48
+     },
+     "CPU_AND_GPU": {
+      "GPU": 48
+     }
+    },
+    "ios16.real_div": {
+     "ALL": {
+      "ANE": 132
+     },
+     "CPU_AND_GPU": {
+      "GPU": 132
+     }
+    },
+    "ios16.reduce_mean": {
+     "ALL": {
+      "ANE": 90
+     },
+     "CPU_AND_GPU": {
+      "GPU": 90
+     }
+    },
+    "ios16.reshape": {
+     "ALL": {
+      "ANE": 48
+     },
+     "CPU_AND_GPU": {
+      "GPU": 48
+     }
+    },
+    "ios16.sin": {
+     "ALL": {
+      "ANE": 50
+     },
+     "CPU_AND_GPU": {
+      "GPU": 50
+     }
+    },
+    "ios16.sqrt": {
+     "ALL": {
+      "ANE": 44
+     },
+     "CPU_AND_GPU": {
+      "GPU": 44
+     }
+    },
+    "ios16.sub": {
+     "ALL": {
+      "ANE": 44,
+      "CPU": 1
+     },
+     "CPU_AND_GPU": {
+      "GPU": 45
+     }
+    },
+    "slice_by_index": {
+     "ALL": {
+      "ANE": 3,
+      "CPU": 1
+     },
+     "CPU_AND_GPU": {
+      "GPU": 4
+     }
+    },
+    "split": {
+     "ALL": {
+      "ANE": 48
+     },
+     "CPU_AND_GPU": {
+      "GPU": 48
+     }
+    }
+   }
+  },
+  "7s": {
+   "ops_with_different_placement": {
+    "ios16.add": {
+     "ALL": {
+      "ANE": 109,
+      "GPU": 109
+     },
+     "CPU_AND_GPU": {
+      "GPU": 218
+     }
+    },
+    "ios16.conv": {
+     "ALL": {
+      "GPU": 30,
+      "ANE": 21
+     },
+     "CPU_AND_GPU": {
+      "GPU": 51
+     }
+    },
+    "ios16.leaky_relu": {
+     "ALL": {
+      "GPU": 2,
+      "ANE": 1
+     },
+     "CPU_AND_GPU": {
+      "GPU": 3
+     }
+    },
+    "ios16.linear": {
+     "ALL": {
+      "ANE": 24,
+      "GPU": 24
+     },
+     "CPU_AND_GPU": {
+      "GPU": 48
+     }
+    },
+    "ios16.mul": {
+     "ALL": {
+      "ANE": 163,
+      "GPU": 165
+     },
+     "CPU_AND_GPU": {
+      "GPU": 328
+     }
+    },
+    "ios16.pow": {
+     "ALL": {
+      "ANE": 24,
+      "GPU": 24
+     },
+     "CPU_AND_GPU": {
+      "GPU": 48
+     }
+    },
+    "ios16.real_div": {
+     "ALL": {
+      "ANE": 66,
+      "GPU": 66
+     },
+     "CPU_AND_GPU": {
+      "GPU": 132
+     }
+    },
+    "ios16.reduce_mean": {
+     "ALL": {
+      "GPU": 46,
+      "ANE": 44
+     },
+     "CPU_AND_GPU": {
+      "GPU": 90
+     }
+    },
+    "ios16.reshape": {
+     "ALL": {
+      "ANE": 24,
+      "GPU": 24
+     },
+     "CPU_AND_GPU": {
+      "GPU": 48
+     }
+    },
+    "ios16.sin": {
+     "ALL": {
+      "ANE": 24,
+      "GPU": 26
+     },
+     "CPU_AND_GPU": {
+      "GPU": 50
+     }
+    },
+    "ios16.sqrt": {
+     "ALL": {
+      "ANE": 22,
+      "GPU": 22
+     },
+     "CPU_AND_GPU": {
+      "GPU": 44
+     }
+    },
+    "ios16.sub": {
+     "ALL": {
+      "ANE": 22,
+      "GPU": 23
+     },
+     "CPU_AND_GPU": {
+      "GPU": 45
+     }
+    },
+    "split": {
+     "ALL": {
+      "ANE": 24,
+      "GPU": 24
+     },
+     "CPU_AND_GPU": {
+      "GPU": 48
+     }
+    }
+   }
+  },
+  "15s": {
+   "ops_with_different_placement": {
+    "ios16.add": {
+     "ALL": {
+      "ANE": 113,
+      "GPU": 105
+     },
+     "CPU_AND_GPU": {
+      "GPU": 218
+     }
+    },
+    "ios16.conv": {
+     "ALL": {
+      "GPU": 30,
+      "ANE": 21
+     },
+     "CPU_AND_GPU": {
+      "GPU": 51
+     }
+    },
+    "ios16.leaky_relu": {
+     "ALL": {
+      "GPU": 2,
+      "ANE": 1
+     },
+     "CPU_AND_GPU": {
+      "GPU": 3
+     }
+    },
+    "ios16.linear": {
+     "ALL": {
+      "ANE": 24,
+      "GPU": 24
+     },
+     "CPU_AND_GPU": {
+      "GPU": 48
+     }
+    },
+    "ios16.mul": {
+     "ALL": {
+      "ANE": 163,
+      "GPU": 165
+     },
+     "CPU_AND_GPU": {
+      "GPU": 328
+     }
+    },
+    "ios16.pow": {
+     "ALL": {
+      "ANE": 24,
+      "GPU": 24
+     },
+     "CPU_AND_GPU": {
+      "GPU": 48
+     }
+    },
+    "ios16.real_div": {
+     "ALL": {
+      "ANE": 66,
+      "GPU": 66
+     },
+     "CPU_AND_GPU": {
+      "GPU": 132
+     }
+    },
+    "ios16.reduce_mean": {
+     "ALL": {
+      "GPU": 46,
+      "ANE": 44
+     },
+     "CPU_AND_GPU": {
+      "GPU": 90
+     }
+    },
+    "ios16.reshape": {
+     "ALL": {
+      "ANE": 24,
+      "GPU": 24
+     },
+     "CPU_AND_GPU": {
+      "GPU": 48
+     }
+    },
+    "ios16.sin": {
+     "ALL": {
+      "ANE": 24,
+      "GPU": 26
+     },
+     "CPU_AND_GPU": {
+      "GPU": 50
+     }
+    },
+    "ios16.sqrt": {
+     "ALL": {
+      "ANE": 22,
+      "GPU": 22
+     },
+     "CPU_AND_GPU": {
+      "GPU": 44
+     }
+    },
+    "ios16.sub": {
+     "ALL": {
+      "ANE": 22,
+      "GPU": 23
+     },
+     "CPU_AND_GPU": {
+      "GPU": 45
+     }
+    },
+    "split": {
+     "ALL": {
+      "ANE": 24,
+      "GPU": 24
+     },
+     "CPU_AND_GPU": {
+      "GPU": 48
+     }
+    }
+   }
+  }
+ }
+}
