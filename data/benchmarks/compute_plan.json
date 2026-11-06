@@ -1,5 +1,5 @@
 {
- "created": "2026-11-04T23:41:33Z",
+ "created": "2026-11-05T12:58:50Z",
  "machine": {
   "cpu": "Apple M3",
   "memory_gb": 16.0,
@@ -29,6 +29,228 @@
  },
  "modes": {
   "ALL": {
+   "30s": {
+    "ops_total": 2253,
+    "cost_estimation": true,
+    "op_counts": {
+     "const": 1079,
+     "ios16.mul": 328,
+     "ios16.add": 218,
+     "ios16.real_div": 132,
+     "ios16.reduce_mean": 90,
+     "ios16.conv": 51,
+     "ios16.sin": 50,
+     "ios16.linear": 48,
+     "ios16.reshape": 48,
+     "split": 48,
+     "ios16.pow": 48,
+     "ios16.sub": 45,
+     "ios16.sqrt": 44,
+     "ios16.cast": 6,
+     "slice_by_index": 4,
+     "ios16.conv_transpose": 4,
+     "ios16.leaky_relu": 3,
+     "ios16.gather": 2,
+     "ios16.clip": 2,
+     "pad": 1,
+     "ios16.exp": 1,
+     "ios16.cos": 1
+    },
+    "device_ops": {
+     "ANE": 61,
+     "GPU": 1113,
+     "unbound": 1079
+    },
+    "by_op": {
+     "const": {
+      "unbound": 1079
+     },
+     "ios16.add": {
+      "GPU": 179,
+      "ANE": 39
+     },
+     "ios16.cast": {
+      "GPU": 6
+     },
+     "ios16.clip": {
+      "GPU": 2
+     },
+     "ios16.conv": {
+      "GPU": 51
+     },
+     "ios16.conv_transpose": {
+      "GPU": 4
+     },
+     "ios16.cos": {
+      "GPU": 1
+     },
+     "ios16.exp": {
+      "GPU": 1
+     },
+     "ios16.gather": {
+      "GPU": 2
+     },
+     "ios16.leaky_relu": {
+      "GPU": 3
+     },
+     "ios16.linear": {
+      "GPU": 48
+     },
+     "ios16.mul": {
+      "GPU": 306,
+      "ANE": 22
+     },
+     "ios16.pow": {
+      "GPU": 48
+     },
+     "ios16.real_div": {
+      "GPU": 132
+     },
+     "ios16.reduce_mean": {
+      "GPU": 90
+     },
+     "ios16.reshape": {
+      "GPU": 48
+     },
+     "ios16.sin": {
+      "GPU": 50
+     },
+     "ios16.sqrt": {
+      "GPU": 44
+     },
+     "ios16.sub": {
+      "GPU": 45
+     },
+     "pad": {
+      "GPU": 1
+     },
+     "slice_by_index": {
+      "GPU": 4
+     },
+     "split": {
+      "GPU": 48
+     }
+    },
+    "est_weight_total": 1.0,
+    "est_weight_by_device": {
+     "ANE": 0.0986,
+     "GPU": 0.9014
+    },
+    "est_weight_by_op": {
+     "ios16.conv@GPU": 0.39795,
+     "ios16.mul@GPU": 0.20963,
+     "ios16.conv_transpose@GPU": 0.08619,
+     "ios16.add@ANE": 0.06695,
+     "ios16.add@GPU": 0.06534,
+     "ios16.sub@GPU": 0.03313,
+     "ios16.mul@ANE": 0.0316,
+     "ios16.sin@GPU": 0.02722,
+     "ios16.pow@GPU": 0.02707,
+     "ios16.reduce_mean@GPU": 0.02482,
+     "ios16.real_div@GPU": 0.02482,
+     "ios16.cast@GPU": 0.00284,
+     "ios16.leaky_relu@GPU": 0.00118
+    },
+    "supported_union_by_op": {
+     "ios16.add": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.cast": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.clip": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.conv": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.conv_transpose": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.cos": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.exp": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.gather": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.leaky_relu": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.linear": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.mul": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.pow": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.real_div": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.reduce_mean": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.reshape": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sin": [
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sqrt": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "ios16.sub": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "pad": [
+      "CPU",
+      "GPU"
+     ],
+     "slice_by_index": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ],
+     "split": [
+      "ANE",
+      "CPU",
+      "GPU"
+     ]
+    },
+    "ops_supported_by_multiple_devices": 1174
+   },
    "7s": {
     "ops_total": 2253,
     "cost_estimation": true,
@@ -1981,6 +2203,28 @@
      },
      "CPU_AND_GPU": {
       "GPU": 48
+     }
+    }
+   }
+  },
+  "30s": {
+   "ops_with_different_placement": {
+    "ios16.add": {
+     "ALL": {
+      "GPU": 179,
+      "ANE": 39
+     },
+     "CPU_AND_GPU": {
+      "GPU": 218
+     }
+    },
+    "ios16.mul": {
+     "ALL": {
+      "GPU": 306,
+      "ANE": 22
+     },
+     "CPU_AND_GPU": {
+      "GPU": 328
      }
     }
    }
